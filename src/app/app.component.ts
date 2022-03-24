@@ -64,9 +64,9 @@ export class AppComponent implements AfterViewInit {
     this.previousPoint = null;
   }
 
-  colorChange($event) {
+  colorChange($event): void {
     // EX #6
-
+    this.context.fillStyle = $event.target.value;
   }
 
   async open(): Promise<void> {
