@@ -16,6 +16,7 @@ export class AppComponent implements AfterViewInit {
 
 
   previousPoint: { x: number, y: number } | null = null;
+
   // EX #17
 
   constructor(private paintService: PaintService, @Inject(DOCUMENT) private document: Document) {
@@ -23,6 +24,12 @@ export class AppComponent implements AfterViewInit {
 
   async ngAfterViewInit(): Promise<any> {
     // EX #2
+    const canvas = this.canvas.nativeElement;
+    const ctx = this.context = canvas.getContext('2d');
+
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'black';
 
     // EX #16
   }
